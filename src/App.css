@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f3ff;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.calendar-card {
+  width: 500px;
+  background: white;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  color:#000000
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.progress-section {
+  margin-bottom: 25px;
+}
+
+.progress-text {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.progress-bar {
+  height: 12px;
+  background: #e5e5e5;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #7c5cff;
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-radius: 10px;
+  background: #f7f7f7;
+  color:#000000
+}
+
+.task-item.completed {
+  opacity: 0.6;
+}
+
+.task-item.completed .task-title {
+  text-decoration: line-through;
+}
+
+.complete-button,
+.delete-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color:#52d167
+}
+
+.complete-button {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.task-title {
+  flex: 1;
+}
+
+.delete-button {
+  font-size: 16px;
+}
+
+.add-task {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.add-task input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.add-task button {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  background: #7c5cff;
+  color: white;
+  cursor: pointer;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 30px;
+  color: #777;
+}
