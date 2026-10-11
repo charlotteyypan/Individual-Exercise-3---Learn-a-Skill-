@@ -25,6 +25,25 @@ body {
   color:#000000
 }
 
+.color-picker {
+  display: flex; 
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 25px;
+  font-size: 15px;
+}
+
+.color-picker select{
+  padding: 8px 12px;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  background: #ddd;
+  color: #000;
+  cursor: pointer;
+  font-size: 15px;
+}
+
 h1 {
   margin-top: 0;
   margin-bottom: 25px;

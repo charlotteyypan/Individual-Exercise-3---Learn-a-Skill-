@@ -14,7 +14,7 @@ const calendarColors = [
   { name: "White", value: "#ffffff" },
   { name: "Blue", value: "#bad3ff" },
   { name: "Green", value: "#99ffb9" },
-  { name: "Pink", value: "#fff0f5" },
+  { name: "Pink", value: "#ffc0cb" },
   { name: "Red", value: "#ff7383" },
   { name: "Gray", value: "#262626" },
 ];
@@ -76,9 +76,25 @@ function App() {
   return (
     <main className="app">
 
-      <div className="calendar-card">
+      <div className="calendar-card"
+          style={{backgroundColor: calendarColor}}>
 
         <h1>Today's Progress</h1>
+        
+        <div className="color-picker">
+          <label htmlFor="calendar-color">
+            Calendar color:
+          </label>
+          <select
+            id="calendar-color"
+            value={calendarColor}
+            onChange={(event)=>setCalendarColor(event.target.value)}
+          >
+            {calendarColors.map((color)=>(
+              <option key={color.value} value={color.value}>{color.name}
+              </option>))}
+          </select>
+        </div>
 
         <ProgressBar
           completed={completedTasks}
