@@ -5,12 +5,14 @@ interface TaskListProps {
   tasks: Task[];
   onToggle: (id: number) => void;
   onDelete: (id: number) => void;
+  onDeadlineChange: (id: number, deadline: string) => void;
 }
 
 function TaskList({
   tasks,
   onToggle,
-  onDelete
+  onDelete,
+  onDeadlineChange
 }: TaskListProps) {
 
   if (tasks.length === 0) {
@@ -29,6 +31,7 @@ function TaskList({
           task={task}
           onToggle={onToggle}
           onDelete={onDelete}
+          onDeadlineChange={onDeadlineChange}
         />
       ))}
     </div>

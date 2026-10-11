@@ -78,6 +78,21 @@ h1 {
   text-decoration: line-through;
 }
 
+.task-deadline {
+  font-size: 12px;
+  color: #1f1f1f;
+}
+
+.overdue {
+  border-left: 4px solid red;
+  background-color: #f5f3ff
+}
+
+.overdue-text {
+  color: red;
+  font-weight: bold;
+}
+
 .complete-button,
 .delete-button {
   border: none;

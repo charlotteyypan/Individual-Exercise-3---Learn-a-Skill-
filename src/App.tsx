@@ -7,7 +7,17 @@ export interface Task {
   id: number;
   title: string;
   completed: boolean;
+  deadline?: string;
 }
+
+const calendarColors = [
+  { name: "White", value: "#ffffff" },
+  { name: "Blue", value: "#bad3ff" },
+  { name: "Green", value: "#99ffb9" },
+  { name: "Pink", value: "#fff0f5" },
+  { name: "Red", value: "#ff7383" },
+  { name: "Gray", value: "#262626" },
+];
 
 function App() {
 
@@ -15,6 +25,8 @@ function App() {
   ]);
 
   const [newTask, setNewTask] = useState("");
+
+  const [calendarColor, setCalendarColor] = useState("#ffffff")
 
   const completedTasks = tasks.filter(
     (task) => task.completed
@@ -45,6 +57,16 @@ function App() {
     );
   }
 
+  function handleDeadlineChange(id: number, deadline: string){
+    setTasks(
+      tasks.map((task) => 
+        task.id == id
+          ? {...task, deadline}
+          : task
+      )
+    )
+  }
+
   function deleteTask(id: number) {
     setTasks(
       tasks.filter((task) => task.id !== id)
@@ -67,6 +89,7 @@ function App() {
           tasks={tasks}
           onToggle={toggleTask}
           onDelete={deleteTask}
+          onDeadlineChange={handleDeadlineChange}
         />
 
         <div className="add-task">
